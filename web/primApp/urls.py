@@ -1,7 +1,7 @@
 
 from xml.dom.minidom import Document
 from django.urls import path
-from .views import datos_mascota, eliminardatos, ing_usuarios, inicio, ingreso_usuarios, lista_mascotas, registro, lista_usuario, editarusuario
+from .views import contacto, datos_mascota, eliminardatos, ing_usuarios, inicio, ingreso_usuarios, lista_mascotas, registro, lista_usuario, editarusuario
 from django.urls import path, include
 from .views import ( datos_mascota, editarFicha, 
 eliminardatos, inicio, ingreso_usuarios, lista_mascotas, registro, lista_usuario, editarusuario, ficha
@@ -22,13 +22,14 @@ urlpatterns = [
     path('Registar',registro, name = 'registrar'),
     path('Usuarios',ing_usuarios, name = 'usuarios'),
     path('Misdatos',lista_usuario, name = 'misdatos'),
-    path('Logout/',LogoutView.as_view(template_name='logout.html'), name="logout"),
+    path('logout/',LogoutView.as_view(template_name='logout.html'), name="logout"),
     path('edita-datos/<id>/',editarusuario, name = 'ediusuarios'),
     path('elimina-datos/<id>/',eliminardatos, name = 'eliminardatos'),
 ############################################################
 
 
      path('acercaDeMi', acercaDeMi , name = 'acercaDeMi'),
+     path('contacto', contacto , name = 'contacto'),
 
 ##########################################################
      path('listamascotas',lista_mascotas, name = 'mismascotas'),

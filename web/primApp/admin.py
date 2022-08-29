@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import mascotas, usuarios
+from .models import Contacto, mascotas, usuarios
 # Register your models here.
 class usuariosAdmin(admin.ModelAdmin):
     
@@ -14,3 +14,4 @@ class mascotasAdmin(admin.ModelAdmin):
 
 admin.site.register(usuarios, usuariosAdmin)
 admin.site.register(mascotas, mascotasAdmin)
+admin.site.register(Contacto)

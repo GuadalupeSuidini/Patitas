@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserCreationForm, UserRegisterForm
 
 from .models import mascotas, usuarios
-from .forms import datos_mascotas, datos_usuarios
+from .forms import datos_mascotas, datos_usuarios, ContactoForms
 
 # Create your views here.
 
@@ -21,6 +21,22 @@ def inicio(request):
 def acercaDeMi(request):
 
     return render(request,"acercaDeMi.html")
+
+def contacto(request):
+
+    data = {'form':ContactoForms()}
+
+    if request.method == 'POST':
+
+        formulario = ContactoForms(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Mensaje enviado"
+        
+        else:
+            data["form"] = formulario
+
+    return render(request, "contacto.html", data)
 
 #############################################################33
 # ingreso y registro de ususarios   

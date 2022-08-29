@@ -3,7 +3,7 @@ from tkinter import Widget
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import mascotas, usuarios
+from .models import Contacto, mascotas, usuarios
 
 
 
@@ -38,5 +38,12 @@ class datos_mascotas(forms.ModelForm):
             "edad": forms.SelectDateWidget()
         }    
 
+
+class ContactoForms(forms.ModelForm):
+
+    class Meta:
+        model = Contacto
+        fields = '__all__'
+        
 
    

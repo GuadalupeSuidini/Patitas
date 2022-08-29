@@ -29,4 +29,20 @@ class mascotas(models.Model):
     
     def __str__(self) -> str:
         return f'{self.nombre}'
+
+opcionesConsulta = [
+    [0,"Consulta"],
+    [1,"Reclamo"],
+    [2,"Sugerencia"],
+    [3,"Felicitaciones"]
+]
+class Contacto(models.Model):
+
+    nombre = models.CharField(max_length=20)
+    correo = models.EmailField()
+    tipoConsulta = models.IntegerField(choices=opcionesConsulta)
+    mensaje = models.TextField()
+
+    def __str__(self) -> str:
+        return f'{self.nombre}'
     
