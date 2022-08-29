@@ -1,0 +1,42 @@
+{% extends 'hijo.html' %}
+{% load static %}
+{% block contenido %}
+
+
+	
+	<div class="container">
+		<div class="textwidget">
+			<h1 class="toptitle"><br/>Datos Personales <br/><i class="fa fa-star roundicon"></i>
+			</h1>	
+			<h4></h4>							
+			<div class="contactstyle topform">										
+				
+					
+					
+						
+                    
+						<div class="mb-6 row">
+							<label for="nombre" class="col-sm-6 col-form-label">Nombre Usuario</label>
+							<div class="col-sm-10">
+							  <input type="text" readonly class="form-control-plaintext" id="nombre" value="{{user.username}}">
+							</div>
+						</div>
+						<form action="" method="POST" enctype="multipart/form-data">
+							
+							{% csrf_token %}
+							{{ form }}
+						<div class="d-flex justify-content-end">
+
+               				<input type="submit" value="Editar" class="btn btn-primary">
+						    <input type="submit" value="Cancelar" class="btn btn-secondary">  
+						</div>
+								
+                             
+						
+				</form>
+				
+				
+			</div>								
+		</div>
+		</div>
+{% endblock %}		

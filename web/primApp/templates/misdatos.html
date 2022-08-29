@@ -1,0 +1,103 @@
+{% extends 'hijo.html' %}
+
+{% block contenido %}
+	
+		<div class="container">
+			<div class="textwidget">
+				<h1 class="toptitle"><br/><br/><i class="fa fa-star roundicon"></i>
+				</h1>	
+				<h4></h4>							
+				<div class="contactstyle topform">										
+					
+						
+						
+							{% csrf_token %}
+							<fieldset disabled>
+								<legend>Mis Datos Personales</legend>
+							<div class="mb-6 row">
+								<label for="nombre" class="col-sm-6 col-form-label">Nombre Usuario</label>
+								<div class="col-sm-10">
+								<input type="text" readonly class="form-control-plaintext" id="nombre" value="{{user.username}}">
+								</div>
+							</div>
+							<form class="row g-3">
+								
+							<form>
+								{% for datos in lista_usu %}
+								<div class="mb-6 row">
+									
+									<label for="nombre" class="col-sm-6 col-form-label">	</label>
+									<img class="img-responsive" alt="" src="{{ datos.imagen.url }}">
+									
+									
+								</div>
+								<div class="mb-6 row">
+									<label for="nombre" class="col-sm-6 col-form-label">Nombre	</label>
+									<div class="col-sm-10">
+									<input type="text" readonly class="form-control-plaintext" id="nombre" value="{{ datos.nombre }}">
+									</div>
+								</div>
+								<div class="mb-6 row">
+									<label for="nombre" class="col-sm-6 col-form-label">Apellido	</label>
+									<div class="col-sm-10">
+									<input type="text" readonly class="form-control-plaintext" id="nombre" value="{{ datos.apellido }}">
+									</div>
+								</div>
+								<div class="mb-6 row">
+									<label for="nombre" class="col-sm-6 col-form-label">Correo	</label>
+									<div class="col-sm-10">
+									<input type="text" readonly class="form-control-plaintext" id="nombre" value="{{ datos.correo }}">
+									</div>
+								</div>
+								<div class="mb-6 row">
+									<label for="nombre" class="col-sm-6 col-form-label">Direccion	</label>
+									<div class="col-sm-10">
+									<input type="text" readonly class="form-control-plaintext" id="nombre" value="{{ datos.direccion }}">
+									</div>
+								</div>
+								<div class="mb-6 row">
+									<label for="nombre" class="col-sm-6 col-form-label">Fecha De Nacimiento	</label>
+									<div class="col-sm-10">
+									<input type="text" readonly class="form-control-plaintext" id="nombre" value="{{ datos.nacimiento }}">
+									</div>
+								</div>
+								<div class="mb-6 row">
+									<label for="nombre" class="col-sm-6 col-form-label">Pais	</label>
+									<div class="col-sm-10">
+									<input type="text" readonly class="form-control-plaintext" id="nombre" value="{{ datos.pais }}">
+									</div>
+								</div>
+								<div class="mb-6 row">
+									<label for="nombre" class="col-sm-6 col-form-label">Departamento	</label>
+									<div class="col-sm-10">
+									<input type="text" readonly class="form-control-plaintext" id="nombre" value="{{ datos.departamento }}">
+									</div>
+								</div>
+								<div class="mb-6 row">
+									<label for="nombre" class="col-sm-6 col-form-label">Celular	</label>
+									<div class="col-sm-10">
+									<input type="text" readonly class="form-control-plaintext" id="nombre" value="{{ datos.celular }}">
+									</div>
+								</div>
+								<div class="mb-6 row">
+									<label for="nombre" class="col-sm-6 col-form-label">Entidad	</label>
+									<div class="col-sm-10">
+									<input type="text" readonly class="form-control-plaintext" id="nombre" value="{{ datos.entidad }}">
+									</div>
+								</div>
+							</fieldset>
+								<a href="{% url 'ediusuarios' datos.id %}" class="btn btn-info btn-sm">Modificar</a>
+								<a href="{% url 'eliminardatos' datos.id %}" class="btn btn-danger btn-sm">Eliminar</a>  
+								
+								{% endfor %}
+							{{mensaje}}	
+							  </form>
+						
+						
+							
+					
+					
+				</div>								
+			</div>
+			</div>
+{% endblock %}
