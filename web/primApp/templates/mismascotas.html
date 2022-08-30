@@ -23,7 +23,7 @@
 
   <title>Title page</title>  
 
-<link href="./main.82cfd66e.css" rel="stylesheet"></head>
+<link href="{% static './main.82cfd66e.css' %}" rel="stylesheet"></head>
 
 <body>
 
@@ -68,9 +68,7 @@
           <li><a href="{% url 'login' %}" title="">Ingresar</a></li>
           {% endif %}
         
-        
-        <li><a href="{% url 'servicios' %}" title="">Services</a></li>
-        <li><a href="" title="">Contact</a></li>
+
         
         
       </ul>

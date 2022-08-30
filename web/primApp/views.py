@@ -207,7 +207,7 @@ def editarFicha(request, id):
         data["form"] = formulario 
 
 
-    return render(request, "mismascotas.html",data)
+    return render(request, "modificarmascota.html",data)
 
 def eliminarFicha(request,id):
 
