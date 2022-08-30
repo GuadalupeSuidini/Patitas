@@ -4,7 +4,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from .forms import UserCreationForm, UserRegisterForm
-
+from django.http import HttpResponse
 from .models import mascotas, usuarios
 from .forms import datos_mascotas, datos_usuarios, ContactoForms
 
@@ -216,3 +216,21 @@ def eliminarFicha(request,id):
     mascota = mascotas.objects.all()
     contexto = {"mascota":mascota}
     return render(request,"padre.html",contexto)
+
+
+def buscar_mas(request):
+
+    if request.GET["nombre"]:
+
+        nombre= request.GET["nombre"]
+
+        masco = mascotas.objects.filter(nombre__icontains=nombre)
+
+
+        return render(request, "buscar_mas.html", {"masco":masco})
+
+    else:
+
+       
+
+       return redirect(to="inicio")

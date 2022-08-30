@@ -5,7 +5,7 @@ from .views import contacto, datos_mascota, eliminardatos, ing_usuarios, inicio,
 from django.urls import path, include
 from .views import ( datos_mascota, editarFicha, 
 eliminardatos, inicio, ingreso_usuarios, lista_mascotas, registro, lista_usuario, editarusuario, ficha
-, eliminarFicha, acercaDeMi)
+, eliminarFicha, acercaDeMi, buscar_mas)
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
@@ -37,6 +37,7 @@ urlpatterns = [
      path('editarFicha/<int:id>',editarFicha, name = 'editarFicha'),
      path('ficha/<int:id>',ficha,name="ficha"),
      path('eliminarFicha/<int:id>',eliminarFicha,name="eliminarFicha"),
+     path('buscar/',buscar_mas, name="Buscar"),
 ]
 
 

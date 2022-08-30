@@ -62,6 +62,22 @@
           <li><a href="{% url 'mismascotas' %}" title="">Mis Mascota</a></li>
           <li><a href="{% url 'acercaDeMi' %}" title="">Acerca de mi</a></li>
           <div class="project-text-inner">
+            <p>
+
+            </p>
+            <span class="input-group-text" id="addon-wrapping">Buscar Mascota</span>
+            <div class="input-group flex-nowrap">
+              <form action="{% url 'Buscar' %}" method="GET">
+              
+                
+                  <input type="text" name="nombre">
+                  <p></p>
+                  <p></p>
+                  <input class="btn btn-primary" type="submit" value="Buscar">
+                
+                
+              </form>  
+            </div>
             
         
           
