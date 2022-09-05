@@ -55,8 +55,8 @@ def ingreso_usuarios(request):
 
             if ingreso:
                 login(request, ingreso)
-
-                return render(request,"padre.html", {"mensaje": f"Bienvenido {user}"})
+                return redirect(to="inicio")
+                return render(request, {"mensaje": f"Bienvenido {user}"})
 
             else:
 
@@ -77,7 +77,7 @@ def registro(request):
 
             username = form.cleaned_data["username"]
             form.save()
-            return render (request, "padre.html", {"mensaje": f'Usuario {username} creado'})
+            return redirect(to="login")
 
     else:
 
