@@ -123,24 +123,38 @@
     <div class="grid">
     <div class="gutter-sizer"></div>
       <div class="grid-sizer"></div>
+
+
+
+
+
+      
+      {% for amigo in lista_amigos %}
+
+        <div class="grid-item">
+            <img class="img-responsive" alt="No se ve" src='{{setting.MEDIA_URL}}{{amigo.imagen.url}}'>
+            {% if user.is_authenticated %}
+            <a href=" " class="project-description">
+            <div class="project-text-holder">
+                <div class="project-text-inner">
+                <h3>{{amigo}}</h3>
+                <p>Mas Info..</p>
+                </div>
+            </div>
+            </a>
+            {% endif %}
+        </div>
+
+      {% endfor %}
+        
      
-          {% for mascota in lista_mas  %}
-                      
-                      <div class="grid-item">
-                          <img class="img-responsive" alt="" src='{{ setting.MEDIA_URL }}{{ mascota.imagen.url }}'>
-                          {% if user.is_authenticated %}
-                          <a href="{% url 'ficha' mascota.id %}" class="project-description">
-                          <div class="project-text-holder">
-                              <div class="project-text-inner">
-                              <h3>{{mascota}}</h3>
-                              <p>Mas Info..</p>
-                              </div>
-                          </div>
-                          </a>
-                          {% endif %}
-                          
-                      </div>
-          {% endfor %}
+          
+
+
+
+
+
+
         
       </div>
   </div>

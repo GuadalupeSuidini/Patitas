@@ -234,3 +234,25 @@ def buscar_mas(request):
        
 
        return redirect(to="inicio")
+
+
+
+############################################### USUARIOS #######################################################
+
+def amigos(request):
+    
+    lista_amigos = usuarios.objects.all()
+
+    contexto = {"lista_amigos":lista_amigos}
+    
+    return render(request, "amigos.html", contexto)
+    
+    
+    
+    '''def lista_mascotas (request): #LISTO
+
+    lista_mas = mascotas.objects.all()
+
+    contexto = {"lista_mas": lista_mas}
+
+    return render(request, "padre.html", contexto)'''

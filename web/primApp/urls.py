@@ -5,7 +5,7 @@ from .views import contacto, datos_mascota, eliminardatos, ing_usuarios, inicio,
 from django.urls import path, include
 from .views import ( datos_mascota, editarFicha, 
 eliminardatos, inicio, ingreso_usuarios, lista_mascotas, registro, lista_usuario, editarusuario, ficha
-, eliminarFicha, acercaDeMi, buscar_mas)
+, eliminarFicha, acercaDeMi, buscar_mas, amigos)
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
@@ -30,6 +30,7 @@ urlpatterns = [
 
      path('acercaDeMi', acercaDeMi , name = 'acercaDeMi'),
      path('contacto', contacto , name = 'contacto'),
+     path('amigos', amigos, name='amigos'),
 
 ##########################################################
      path('listamascotas',lista_mascotas, name = 'mismascotas'),
