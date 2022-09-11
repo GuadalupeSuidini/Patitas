@@ -2,11 +2,11 @@
 
 
 {% block bloqueQueCambia %}
-	<div class="container">
+	<center><div class="container">
 		<div class="textwidget">
-			<h1 class="toptitle">Ingrese Su Usuario A Registar<br/> Y Su contraseña<br/><br/><i class="fa fa-star roundicon"></i>
-			</h1>	
-										
+			<h2 class="toptitle">Ingrese Su Usuario A Registar<br/> 
+			</h2>	
+		</center>							
 			<div class="contactstyle topform">										
 				<form action="{% url 'registrar' %}" method="POST" >
 					
@@ -15,8 +15,7 @@
 						{{form.as_p}}
 						
                         
-						<input style="background: rgba(213, 43, 43, 0.51);"type="submit"  value="Registar"> 
-					
+						<button type="submit" class="btn btn-primary">Registrar</button>
 				</form>
 				
 			</div>	

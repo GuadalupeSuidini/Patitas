@@ -1,13 +1,19 @@
 {% extends "padreReal.html" %}
 {% load static %}
 {% block bloqueQueCambia %}
-
+<center>
     <h3>
         Has Cerrado Secion 
 
-        Gracias por Visitarnos
+       
     </h3>
-    <a href="{% url 'inicio' %}" title="">Volver a inicio</a>
 
+    <h3>
+      Gracias Por Visitarnos
+       
+    </h3>
+    
+    <a class="btn btn-primary" href="{% url 'inicio' %}" role="button">Volver a inicio</a>
+</center>
 
 {% endblock %}
