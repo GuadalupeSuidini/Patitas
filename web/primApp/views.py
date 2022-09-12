@@ -246,13 +246,3 @@ def amigos(request):
     contexto = {"lista_amigos":lista_amigos}
     
     return render(request, "amigos.html", contexto)
-    
-    
-    
-    '''def lista_mascotas (request): #LISTO
-
-    lista_mas = mascotas.objects.all()
-
-    contexto = {"lista_mas": lista_mas}
-
-    return render(request, "padre.html", contexto)'''
