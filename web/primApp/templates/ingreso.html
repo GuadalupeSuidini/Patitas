@@ -1,14 +1,19 @@
 {% extends 'padreReal.html' %}
 
 {% block bloqueQueCambia %}
-        
 
 
+
+<center>	
 	<div class="container">
 		<div class="textwidget">
-			<h1 class="toptitle">Ingrese Su Usuario<br/> Y Contraseña <br/><br/><i class="fa fa-star roundicon"></i>
-			</h1>	
-			<h4></h4>							
+			<h2 class="toptitle">Ingrese Su Usuario<br/>
+			</h2>	
+			<h2 class="toptitle">Y Contraseña<br/>
+			</h2>
+			
+		</center>	
+			
 			<div class="contactstyle topform">										
 				<form action="{% url 'login' %}" method="POST" >
 					
@@ -23,11 +28,12 @@
 						<button type="submit" class="btn btn-primary">Ingresar</button>
 					
 				</form>
-
+			
 				<p>No tienes una Cuenta? <a href="{% url 'registrar' %}" class="btn btn-primary">Crear Cuenta</a></p>
 				
 				
 			</div>								
 		</div>
 		</div>
+			
 {% endblock %}
