@@ -134,7 +134,7 @@
         <div class="grid-item">
             <img class="img-responsive" alt="No se ve" src='{{setting.MEDIA_URL}}{{amigo.imagen.url}}'>
             {% if user.is_authenticated %}
-            <a href=" " class="project-description">
+            <a href="{% url 'fichaUsuario' amigo.id %}" class="project-description">
             <div class="project-text-holder">
                 <div class="project-text-inner">
                 <h3>{{amigo}}</h3>

@@ -246,3 +246,9 @@ def amigos(request):
     contexto = {"lista_amigos":lista_amigos}
     
     return render(request, "amigos.html", contexto)
+
+def fichaUsuario(request,id):
+
+    usuario = usuarios.objects.get(id=id)
+
+    return render(request,"fichaUsuario.html",{"usuario":usuario})
