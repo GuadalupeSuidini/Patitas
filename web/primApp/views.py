@@ -251,4 +251,21 @@ def fichaUsuario(request,id):
 
     usuario = usuarios.objects.get(id=id)
 
-    return render(request,"fichaUsuario.html",{"usuario":usuario})
+    return render(request,"fichaUsuario.html",{"usuario":usuario}) 
+
+def buscarAmigos(request):
+
+    if request.GET["nombre"]:
+
+        nombre= request.GET["nombre"]
+
+        amigo = usuarios.objects.filter(nombre__icontains=nombre)
+
+
+        return render(request, "buscarAmigos.html", {"amigo":amigo})
+
+    else:
+
+       
+
+       return redirect(to="amigos")
