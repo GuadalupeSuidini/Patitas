@@ -41,7 +41,7 @@
   <nav class="sidebar">
     <div class="navbar-collapse" id="navbar-collapse">
       <div class="site-header hidden-xs">
-          <a class="site-brand" href="./index.html" title="">
+          <a class="site-brand" href="{% url 'inicio' %}" title="">
             <img class="img-responsive site-logo" alt="" src="{% static './assets/images/mashup-logo.svg' %}">
             Petite
           </a>
@@ -93,6 +93,7 @@
                 <form action="{% url 'eliminarFicha' mascota.id %}" method="POST">{% csrf_token %}
                     <button type="submit" class="btn btn-primary btn-lg">Eliminar</button>
                 </form>
+                <br>
                 <a href="{% url 'editarFicha' mascota.id %}"><button type="submit" class="btn btn-primary btn-lg">Editar</button></a>
             </div>
             {% endif %}

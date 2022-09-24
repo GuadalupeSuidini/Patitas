@@ -32,6 +32,7 @@ class mascotas(models.Model):
     descripcion = models.TextField(max_length=150)
     imagen = models.ImageField(null=True, blank=True)
     
+    
     def __str__(self) -> str:
         return f'{self.nombre}'
 
